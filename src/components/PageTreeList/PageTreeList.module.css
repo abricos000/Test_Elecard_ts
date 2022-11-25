@@ -1,0 +1,138 @@
+.listPosition{
+    padding: 150px 300px;
+    font-size: 20px;
+}
+.wrapImgModal{
+    padding: 0;
+    background: var(--black);
+    text-align: center;
+    max-width: 700px; 
+    width: 100%;
+    position: relative;
+}
+.rightPanelModal{
+    max-width: 250px;
+    width: 100%;
+    background: var(--gray-100);  
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.imgModal{
+    max-height: 600px;
+    height: 100%;
+    max-width: 655px;
+    object-fit: cover;
+}
+.btns button{
+    position: absolute;
+    top: 40%; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--color-gray-400);
+    transition: .9s;
+    outline: none;
+    z-index: 2;
+    opacity: .5;
+    max-height: 150px;
+    height: 100%;
+    max-width: 150px;
+    width: 100%;
+}
+.btns button:hover{
+    color: var(--color-gray-200);
+    opacity: 1;
+    text-shadow: var(--black) 1px 0 5px;
+}
+.btns button:active{
+    color: var(--color-gray-200);
+    text-shadow: var(--black) 1px 0 5px;
+}
+.btnPref{
+    left: 0;
+    text-align: left;
+}
+.btnNext{
+    right: 0;
+    text-align: right;
+}
+
+@media screen and (min-width: 980px) and (max-width: 1120px){
+    .listPosition{
+        padding: 150px 200px;
+        font-size: 16px;
+    }
+    .rightPanelModal{
+        max-width: 150px;
+    }
+    .wrapImgModal{
+        max-width: 550px;
+    }
+    .imgModal{
+        max-height: 550px;
+        max-width: 500px;
+    }
+    .btns button{
+        top: 35%;
+    }
+}
+@media screen and (min-width: 720px) and (max-width: 980px){
+    .listPosition {
+        padding: 50px 70px;
+        font-size: 14px;
+    }
+    .rightPanelModal{
+        max-width: 150px;
+    }
+    .wrapImgModal{
+        max-width: 550px;
+    }
+    .imgModal{
+        max-height: 500px;
+        max-width: 500px;
+    }
+    .btns button{
+        top: 35%;
+    }
+} 
+@media screen and (min-width: 580px) and (max-width: 720px){
+    .listPosition{
+        padding: 50px 70px;
+        font-size: 12px;
+    }
+    .rightPanelModal{
+        max-width: 120px;
+    }
+    .wrapImgModal{
+        max-width: 450px;
+    }
+    .imgModal{
+        max-height: 450px;
+        max-width: 377px;
+    }
+    .btns button{
+        top: 30%;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 580px){
+    .listPosition{
+        padding: 40px 0;
+        font-size: 8px;
+    }
+    .rightPanelModal{
+        max-width: 70px;
+    }
+    .wrapImgModal{
+        max-width: 210px;
+    }
+    .imgModal{
+        max-height: 190px;
+        max-width: 210px;
+    }
+    .btns button{
+        top: 15%;
+        font-size: 18px;
+    }
+}

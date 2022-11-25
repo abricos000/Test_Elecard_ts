@@ -1,0 +1,6 @@
+.cards{
+  flex-wrap: wrap;
+  display: flex;
+  flex-grow: 1  ;
+}
+
