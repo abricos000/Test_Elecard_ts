@@ -1,7 +1,12 @@
 import React from 'react';
 import { dataHost } from '../../../../constants/host';
-import { PropsBranchThee } from '../../../../Interfaces/Interfaces';
+import { ICard } from '../../../../Interfaces/Interfaces';
 import s from './BranchThee.module.css';
+
+interface PropsBranchThee {
+  onClickImageModal: CallableFunction;
+  elementCategories: ICard;
+}
 
 export const BranchThee = ({ onClickImageModal, elementCategories }: PropsBranchThee) => (
   <div className={`${s.item} ${s.hoverImg}`}>

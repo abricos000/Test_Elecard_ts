@@ -1,6 +1,16 @@
 import React from 'react';
-import { IOption, PropsRadioButton } from '../../Interfaces/Interfaces';
 import s from './RadioButton.module.css';
+
+interface IOption {
+  value: string;
+  name: string;
+}
+
+interface PropsRadioButton {
+  onSortData: IOption [];
+  onChange: CallableFunction;
+  sortMethod: string;
+}
 
 const RadioButton = ({ onSortData, onChange, sortMethod }: PropsRadioButton) => (
   <div className={s.radioBtns}>

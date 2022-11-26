@@ -3,7 +3,18 @@ import s from './SortCardsPage.module.css';
 import { sortData, valueSortCard } from '../../../constants/sort-card';
 import { Button } from '../../Buttons/Button';
 import RadioButton from '../../RadioButton/RadioButton';
-import { ICard, IRepoKeys, PropsSortCardsPage } from '../../../Interfaces/Interfaces';
+import { ICard } from '../../../Interfaces/Interfaces';
+
+type IRepoKeys = 'filesize' | 'timestamp' | 'category';
+
+interface PropsSortCardsPage {
+  onAddAllCards: CallableFunction ;
+  onShowDeletedCards: CallableFunction;
+  removeShowDeletedCards: CallableFunction;
+  quantityPosts: number;
+  setCards: CallableFunction;
+  onBackToCards: CallableFunction;
+}
 
 export const SortCardsPage = ({
   onAddAllCards, onShowDeletedCards, removeShowDeletedCards, quantityPosts, setCards, onBackToCards,

@@ -3,7 +3,13 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Card } from './Card/Card';
 import s from './Сards.module.css';
 import './Сards.css';
-import { ICard, PropsCards } from '../../Interfaces/Interfaces';
+import { ICard } from '../../Interfaces/Interfaces';
+
+interface PropsCards {
+  postList: ICard[];
+  onClose: CallableFunction;
+}
+
 
 export const Cards = ({ postList, onClose }: PropsCards) => (
   <TransitionGroup className={s.cards}>
