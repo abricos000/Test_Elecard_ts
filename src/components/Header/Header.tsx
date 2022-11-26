@@ -1,7 +1,11 @@
 import React from 'react';
 import s from './Header.module.css';
 import { renderMethodPage } from '../../constants/render-method';
-import { PropsHeader } from '../../Interfaces/Interfaces';
+
+interface PropsHeader {
+  onChangeRenderMethod: CallableFunction ;
+  renderMethod: string;
+}
 
 export const Header = ({ onChangeRenderMethod, renderMethod }: PropsHeader) => {
   const valuePage = 'valuePage';

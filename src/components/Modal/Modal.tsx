@@ -1,6 +1,10 @@
 import React from 'react';
-import { PropsModal } from '../../Interfaces/Interfaces';
 import s from './Modal.module.css';
+
+interface PropsModal {
+  children: React.ReactNode;
+  onClose: CallableFunction
+}
 
 export const Modal = ({ children, onClose }: PropsModal) => (
   <div role="presentation" onClick={() => onClose()} className={[s.modal, s.active].join(' ')}>

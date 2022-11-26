@@ -1,6 +1,10 @@
 import React from 'react';
-import { PropsButton } from '../../Interfaces/Interfaces';
 import s from './Button.module.css';
+
+interface PropsButton {
+  children: string;
+  onClick: CallableFunction;
+}
 
 export const Button = ({ children, onClick }: PropsButton) => (
   <button

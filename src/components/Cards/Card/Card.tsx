@@ -2,7 +2,12 @@ import React from 'react';
 import { mathDateMethod } from '../../../constants/math-method';
 import { dataHost } from '../../../constants/host';
 import s from './Сard.module.css';
-import { PropsCard } from '../../../Interfaces/Interfaces';
+import { ICard } from '../../../Interfaces/Interfaces';
+
+interface PropsCard {
+  post: ICard;
+  onRemove: CallableFunction;
+}
 
 export const Card = ({ post, onRemove }: PropsCard) => (
   <div className={s.card}>

@@ -1,7 +1,13 @@
 import React from 'react';
-import { ICard, PropsTreeList } from '../../../Interfaces/Interfaces';
+import { ICard, IMainBranch } from '../../../Interfaces/Interfaces';
 import { BranchThee } from './BranchThee/BranchThee';
 import s from './TreeList.module.css';
+
+interface PropsTreeList {
+  onAddTree: CallableFunction;
+  onClickImageModal: CallableFunction;
+  elementArray: IMainBranch;
+}
 
 export const TreeList = ({ onAddTree, onClickImageModal, elementArray }: PropsTreeList) => (
   <div className={s.item}>

@@ -6,12 +6,18 @@ import { SortCardsPage } from './SortCardsPage/SortCardsPage';
 import { clearRemovedCards, getRemovedCardList, setRemovedCard } from '../../utils/removed-cards';
 import { numberPostsPerPage } from '../../constants/number-of-posts-per-page';
 import { getCardList, setCardList, clearCards } from '../../utils/cards';
-import { ICard, IPageNumber, PropsCardsPage } from '../../Interfaces/Interfaces';
+import { ICard, IPageNumber } from '../../Interfaces/Interfaces';
+
+
+interface PropsCardsPage {
+  posts: ICard[] ;
+  onScrollToTop: CallableFunction;
+}
 
 export const CardsPage = ({ posts, onScrollToTop }: PropsCardsPage) => {
 
   const [cards, setCards] = useState((getCardList().length ? getCardList() : posts) as ICard[]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1  );
   const [postsPerPage] = useState(numberPostsPerPage);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;

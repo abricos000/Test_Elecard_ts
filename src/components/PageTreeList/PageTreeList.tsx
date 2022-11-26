@@ -5,10 +5,26 @@ import { dataHost } from '../../constants/host';
 import { Button } from '../Buttons/Button';
 import { Modal } from '../Modal/Modal';
 import { TreeList } from './TreeList/TreeList';
-import { IBranch, IColection, IMainBranch, PropsPageTreeList } from '../../Interfaces/Interfaces';
+import { IMainBranch } from '../../Interfaces/Interfaces';
 
 const pref: string = 'pref';
 const next: string = 'next';
+
+interface IBranch {
+  image: string;
+  filesize: number;
+  timestamp: number;
+  category: string;
+  id: number;
+}
+
+interface PropsPageTreeList {
+  posts: IBranch[];
+}
+
+interface IColection {
+  [key: string]: IMainBranch;
+}
 
 export const PageTreeList = ({ posts }: PropsPageTreeList) => {
 
