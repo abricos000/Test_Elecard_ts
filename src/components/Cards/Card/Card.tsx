@@ -2,7 +2,12 @@ import React from 'react';
 import { mathDateMethod } from '../../../constants/math-method';
 import { dataHost } from '../../../constants/host';
 import s from './Сard.module.css';
-import { PropsCard } from '../../../Interfaces/Interfaces';
+import { ICard } from '../../../Interfaces/Interfaces';
+
+interface PropsCard {
+  post: ICard;
+  onRemove: CallableFunction;
+}
 
 export const Card = ({ post, onRemove }: PropsCard) => (
   <div className={s.card}>
@@ -12,17 +17,17 @@ export const Card = ({ post, onRemove }: PropsCard) => (
       src={`${dataHost}/${post.image}`}
       alt="изображение из категории"
     />
+
+    <button
+      type="button"
+      className={s.btn}
+      onClick={() => onRemove(post)}
+    >
+      &times;
+    </button>
+
     <div className={s.textWrapper}>
       <div className={s.text}>
-
-        <button
-          type="button"
-          className={s.btn}
-          onClick={() => onRemove(post)}
-        >
-          &times;
-        </button>
-
         <span>
           <b>категория</b>
           {' '}

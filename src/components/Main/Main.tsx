@@ -7,7 +7,11 @@ import { PageTreeList } from '../PageTreeList/PageTreeList';
 import { CardsPage } from '../CardsPage/CardsPage';
 import { renderMethodPage } from '../../constants/render-method';
 import { host } from '../../constants/host';
-import { ICard, PropsMain } from '../../Interfaces/Interfaces';
+import { ICard } from '../../Interfaces/Interfaces';
+
+interface PropsMain {
+  renderMethod: string;
+}
 
 export const Main = ({ renderMethod }: PropsMain) => {
 
@@ -19,6 +23,8 @@ export const Main = ({ renderMethod }: PropsMain) => {
       setLoading(true);
       axios.get(host).then(({ data }) => {
         const newData = data.map((imageData: ICard, index: number) => ({ ...imageData, id: index }));
+        console.log('111111111');
+        
         setPosts(newData);
       }).finally(() => {
         setLoading(false);
@@ -34,16 +40,12 @@ export const Main = ({ renderMethod }: PropsMain) => {
   if (loading) {
     return <h1 className={s.noPost}>loading...</h1>;
   }
+  
   return (
     <main id="top" className={s.mainContent}>
       {posts.length && (
         renderMethod === renderMethodPage.cards
-          ? (
-            <CardsPage
-              posts={posts}
-              onScrollToTop={handleScrollToTop}
-            />
-          )
+          ? <CardsPage posts={posts} /> 
           : <PageTreeList posts={posts} />
       )}
 

@@ -5,7 +5,15 @@ import { dataHost } from '../../constants/host';
 import { Button } from '../Buttons/Button';
 import { Modal } from '../Modal/Modal';
 import { TreeList } from './TreeList/TreeList';
-import { IBranch, IColection, IMainBranch, PropsPageTreeList } from '../../Interfaces/Interfaces';
+import { IBranch, IMainBranch } from '../../Interfaces/Interfaces';
+
+interface IColection {
+  [key: string]: IMainBranch;
+}
+interface PropsPageTreeList {
+  posts: IBranch[];
+}
+
 
 const pref: string = 'pref';
 const next: string = 'next';
@@ -89,7 +97,7 @@ export const PageTreeList = ({ posts }: PropsPageTreeList) => {
             </div>
             <img className={s.imgModal} src={modal.img} alt="изображение из категории, которое выводится в модальное окно" />
           </span>
-          <div className={s.rightPanelModal} />
+          {/* <div className={s.rightPanelModal} /> */}
         </Modal>
       )}
     </div>

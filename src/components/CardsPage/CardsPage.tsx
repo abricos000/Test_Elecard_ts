@@ -6,9 +6,15 @@ import { SortCardsPage } from './SortCardsPage/SortCardsPage';
 import { clearRemovedCards, getRemovedCardList, setRemovedCard } from '../../utils/removed-cards';
 import { numberPostsPerPage } from '../../constants/number-of-posts-per-page';
 import { getCardList, setCardList, clearCards } from '../../utils/cards';
-import { ICard, IPageNumber, PropsCardsPage } from '../../Interfaces/Interfaces';
+import { ICard, IPageNumber } from '../../Interfaces/Interfaces';
 
-export const CardsPage = ({ posts, onScrollToTop }: PropsCardsPage) => {
+interface PropsCardsPage {
+  posts: ICard[] ;
+}
+
+
+
+export const CardsPage = ({ posts, }: PropsCardsPage) => {
 
   const [cards, setCards] = useState((getCardList().length ? getCardList() : posts) as ICard[]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,7 +36,7 @@ export const CardsPage = ({ posts, onScrollToTop }: PropsCardsPage) => {
 
   const handlePaginate = (currentPageNumber: number) => {
     setCurrentPage(currentPageNumber);
-    onScrollToTop();
+    // onScrollToTop();
     setPageNumbers(pageNumbers.map((pageNumber) => (
       { number: pageNumber.number, status: currentPageNumber === pageNumber.number })));
   };

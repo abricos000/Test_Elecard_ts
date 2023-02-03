@@ -3,11 +3,24 @@ import s from './SortCardsPage.module.css';
 import { sortData, valueSortCard } from '../../../constants/sort-card';
 import { Button } from '../../Buttons/Button';
 import RadioButton from '../../RadioButton/RadioButton';
-import { ICard, IRepoKeys, PropsSortCardsPage } from '../../../Interfaces/Interfaces';
+import { ICard } from '../../../Interfaces/Interfaces';
+
+type IRepoKeys = 'filesize' | 'timestamp' | 'category';
+
+interface PropsSortCardsPage {
+  onAddAllCards: CallableFunction;
+  onShowDeletedCards: CallableFunction;
+  removeShowDeletedCards: CallableFunction;
+  quantityPosts: number;
+  setCards: CallableFunction;
+  onBackToCards: CallableFunction;
+}
 
 export const SortCardsPage = ({
   onAddAllCards, onShowDeletedCards, removeShowDeletedCards, quantityPosts, setCards, onBackToCards,
 }: PropsSortCardsPage) => {
+  // const [countCards, setCountCards] = useState(quantityPosts - getRemovedCardList().length);
+
   const [sortMethod, setSortMethod] = useState(valueSortCard.category);
 
   const handleSortPost = (sort: IRepoKeys) => {
@@ -25,6 +38,7 @@ export const SortCardsPage = ({
     });
   };
 
+
   return (
     <div className={s.container}>
       <RadioButton
@@ -33,11 +47,11 @@ export const SortCardsPage = ({
         onSortData={sortData}
       />
       <div className={s.buttons}>
-        <Button
+        {/* <Button
           onClick={onBackToCards}
         >
           Вернуться к карточкам
-        </Button>
+        </Button> */}
 
         <Button
           onClick={onAddAllCards}
@@ -45,13 +59,13 @@ export const SortCardsPage = ({
           добавить все карточки
 
         </Button>
-
+{/* 
         <Button
           onClick={onShowDeletedCards}
         >
           Корзина
 
-        </Button>
+        </Button> */}
 
         <Button
           onClick={removeShowDeletedCards}
@@ -61,13 +75,13 @@ export const SortCardsPage = ({
         </Button>
 
       </div>
-      <span className={s.quantity}>
+      {/* <span className={s.quantity}>
         кол-во изображений:
         <span className={s.coutPosts}>
           {' '}
-          {quantityPosts}
+          {countCards}
         </span>
-      </span>
+      </span> */}
     </div>
   );
 };

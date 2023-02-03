@@ -1,15 +1,25 @@
 .card-enter {
   opacity: 0;
+  /* display: none; */
 }
 .card-enter-active {
+  /* display: block; */
   opacity: 1;
+  /* transform: rotate(90rad); */
+
   transition: opacity .3s ease-in;
+  /* transform: translateX(-150px); */
 }
 .card-exit {
+  /* display: block; */
+
   opacity: 1;
 }
 .card-exit-active {
+  /* display: none; */
   opacity: 0;
+  /* transform: rotate(90rad); */
+
   transition: opacity .3s ease-in;
 }
 

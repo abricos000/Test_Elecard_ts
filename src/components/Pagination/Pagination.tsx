@@ -1,7 +1,11 @@
 import React from 'react';
-import { IPageNumber, PropsPagination } from '../../Interfaces/Interfaces';
+import { IPageNumber } from '../../Interfaces/Interfaces';
 import s from './Pagination.module.css';
 
+interface PropsPagination {
+  onPaginate: CallableFunction;
+  pageNumbers: IPageNumber[];
+}
 
 export const Pagination = ({ onPaginate, pageNumbers }: PropsPagination) => (
   <div>
