@@ -14,7 +14,7 @@ interface PropsCardsPage {
 
 
 
-export const CardsPage = ({ posts, }: PropsCardsPage) => {
+export const CardsPage = ({ posts }: PropsCardsPage) => {
 
   const [cards, setCards] = useState((getCardList().length ? getCardList() : posts) as ICard[]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,7 +36,6 @@ export const CardsPage = ({ posts, }: PropsCardsPage) => {
 
   const handlePaginate = (currentPageNumber: number) => {
     setCurrentPage(currentPageNumber);
-    // onScrollToTop();
     setPageNumbers(pageNumbers.map((pageNumber) => (
       { number: pageNumber.number, status: currentPageNumber === pageNumber.number })));
   };

@@ -17,9 +17,8 @@ interface PropsSortCardsPage {
 }
 
 export const SortCardsPage = ({
-  onAddAllCards, onShowDeletedCards, removeShowDeletedCards, quantityPosts, setCards, onBackToCards,
+  onAddAllCards, onShowDeletedCards, removeShowDeletedCards, quantityPosts, setCards, onBackToCards, 
 }: PropsSortCardsPage) => {
-  // const [countCards, setCountCards] = useState(quantityPosts - getRemovedCardList().length);
 
   const [sortMethod, setSortMethod] = useState(valueSortCard.category);
 
@@ -47,11 +46,11 @@ export const SortCardsPage = ({
         onSortData={sortData}
       />
       <div className={s.buttons}>
-        {/* <Button
+        <Button
           onClick={onBackToCards}
         >
           Вернуться к карточкам
-        </Button> */}
+        </Button>
 
         <Button
           onClick={onAddAllCards}
@@ -59,13 +58,13 @@ export const SortCardsPage = ({
           добавить все карточки
 
         </Button>
-{/* 
+
         <Button
           onClick={onShowDeletedCards}
         >
           Корзина
 
-        </Button> */}
+        </Button>
 
         <Button
           onClick={removeShowDeletedCards}
@@ -75,13 +74,13 @@ export const SortCardsPage = ({
         </Button>
 
       </div>
-      {/* <span className={s.quantity}>
+      <span className={s.quantity}>
         кол-во изображений:
         <span className={s.coutPosts}>
           {' '}
-          {countCards}
+          {quantityPosts}
         </span>
-      </span> */}
+      </span>
     </div>
   );
 };
