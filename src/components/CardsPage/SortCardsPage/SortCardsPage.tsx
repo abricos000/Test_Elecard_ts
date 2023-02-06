@@ -37,7 +37,6 @@ export const SortCardsPage = ({
     });
   };
 
-
   return (
     <div className={s.container}>
       <RadioButton
@@ -46,33 +45,10 @@ export const SortCardsPage = ({
         onSortData={sortData}
       />
       <div className={s.buttons}>
-        <Button
-          onClick={onBackToCards}
-        >
-          Вернуться к карточкам
-        </Button>
-
-        <Button
-          onClick={onAddAllCards}
-        >
-          добавить все карточки
-
-        </Button>
-
-        <Button
-          onClick={onShowDeletedCards}
-        >
-          Корзина
-
-        </Button>
-
-        <Button
-          onClick={removeShowDeletedCards}
-        >
-          Очистить корзину
-
-        </Button>
-
+        <Button onClick={onBackToCards}> Вернуться к карточкам </Button>
+        <Button onClick={onAddAllCards}> добавить все карточки </Button>
+        <Button onClick={onShowDeletedCards}> Корзина </Button>
+        <Button onClick={removeShowDeletedCards}> Очистить корзину </Button>
       </div>
       <span className={s.quantity}>
         кол-во изображений:

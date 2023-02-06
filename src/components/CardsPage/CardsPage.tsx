@@ -69,6 +69,10 @@ export const CardsPage = ({ posts }: PropsCardsPage) => {
 
   return (
     <div>
+      <Pagination
+        pageNumbers={pageNumbers}
+        onPaginate={handlePaginate}
+      />
       <div className={s.cardPage}>
         {postList.length
           ? (
